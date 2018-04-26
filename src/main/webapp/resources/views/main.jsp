@@ -11,6 +11,6 @@
     <title>Strona główna</title>
 </head>
 <body>
-Strona3456
+Strona34566
 </body>
 </html>
