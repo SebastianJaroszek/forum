@@ -12,7 +12,7 @@
     <title>Rejestracja</title>
 </head>
 <body>
-<form:form action="registerNewUser" method="post" modelAttribute="newUser">
+<form:form action="registration" method="post" modelAttribute="newUser">
     Nickname:<br>
     <form:input path="nickname"/><br><br>
     E-mail:<br>
