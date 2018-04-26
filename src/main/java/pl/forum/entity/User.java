@@ -1,5 +1,6 @@
 package pl.forum.entity;
 
+import com.sun.istack.internal.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,10 +19,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "login")
-    private String login;
+    @Column(name = "nickname")
+    private String nickname;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
     @Column(name = "password")

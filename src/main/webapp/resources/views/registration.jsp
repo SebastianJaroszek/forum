@@ -13,8 +13,15 @@
 </head>
 <body>
 <form:form action="registerNewUser" method="post" modelAttribute="newUser">
-    Loginasdfadasdasdasd:<br>
-    <form:input path="login"/>
+    Nickname:<br>
+    <form:input path="nickname"/><br><br>
+    E-mail:<br>
+    <form:input path="email"/><br><br>
+    Password:<br>
+    <form:password path="password"/><br><br>
+    Confirm password:<br>
+    <form:password path="confirmPassword"/><br><br>
+    <input type="submit" value="sign up"/>
 </form:form>
 </body>
 </html>

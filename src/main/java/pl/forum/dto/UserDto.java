@@ -9,8 +9,9 @@ import lombok.*;
 @AllArgsConstructor
 public class UserDto {
 
-    private String login;
+    private String nickname;
     private String password;
+    private String confirmPassword;
     private String email;
 
 }

@@ -21,7 +21,6 @@ public class RegistrationController {
     public ModelAndView showRegistrationPage(){
         ModelAndView mav = new ModelAndView("registration");
         mav.addObject("newUser", new UserDto());
-        userService.createUser();
         return mav;
     }
 

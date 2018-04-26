@@ -15,12 +15,9 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    @Autowired
-
-
     public void createUser(){
         User user = User.builder()
-                .login("Mateusz")
+                .nickname("Mateusz")
                 .password("mati123")
                 .email("mpindral@o2.pl")
                 .build();
