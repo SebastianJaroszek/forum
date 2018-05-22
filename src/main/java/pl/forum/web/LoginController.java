@@ -26,11 +26,4 @@ public class LoginController {
         return mav;
     }
 
-    @PostMapping(value = "/login")
-    public ModelAndView loginUser(@ModelAttribute("newUser") UserDto userDto){
-        ModelAndView mav = new ModelAndView("loginResult");
-        mav.addObject("message", userService.loginUser(userDto));
-        return mav;
-    }
-
 }

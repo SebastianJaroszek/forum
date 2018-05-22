@@ -7,6 +7,7 @@ import pl.forum.dto.UserDto;
 import pl.forum.entity.User;
 import pl.forum.mapper.UserMapper;
 import pl.forum.repository.UserRepository;
+import pl.forum.type.RoleType;
 
 @Service
 public class UserService {
@@ -23,6 +24,7 @@ public class UserService {
     }
 
     public void createUser(UserDto userDto){
+        userDto.setRole(RoleType.USER);
         User user = userMapper.mapUserDtoToUser(userDto);
         userRepository.save(user);
     }

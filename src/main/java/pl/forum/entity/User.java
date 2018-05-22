@@ -1,7 +1,7 @@
 package pl.forum.entity;
 
-import com.sun.istack.internal.NotNull;
 import lombok.*;
+import pl.forum.type.RoleType;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -30,5 +30,9 @@ public class User {
 
     @OneToMany(mappedBy = "author")
     private Set<Post> posts;
+
+    @Column(name = "role")
+    @Enumerated(value = EnumType.STRING)
+    private RoleType role;
 
 }

@@ -12,13 +12,17 @@
     <title>Login</title>
 </head>
 <body>
-<form:form action="login" modelAttribute="newUser" method="post">
-    TODO: dodać możliwość logowania się za pomocą id użytkownika<br><br>
-    E-mail:<br>
-    <form:input path="email"/><br><br>
-    Password:<br>
-    <form:password path="password"/><br><br>
-    <input type="submit" value="sign in">
-</form:form>
+<form name="loginForm" action="login" method="post">
+    <p>
+        E-mail:<br>
+        <input type="text" name="username">
+    </p>
+    <p>
+        Password:<br>
+        <input type="password" name="password"/>
+    </p>
+    <input type="submit" name="submit" value="sign in"/>
+</form>
+TODO: dodać możliwość logowania się za pomocą id użytkownika<br><br>
 </body>
 </html>
