@@ -64,6 +64,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .loginPage("/login")
                     .successHandler(successLoginHandler)
                     .permitAll()
+                .and().exceptionHandling().accessDeniedPage("/error")
                 .and().csrf().disable();
 
         /*http.authorizeRequests()
