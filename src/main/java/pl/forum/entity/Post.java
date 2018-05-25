@@ -21,6 +21,9 @@ public class Post {
     @ManyToOne
     private User author;
 
+    @ManyToOne
+    private Thread thread;
+
     @Column(name = "date")
     private LocalDate date;
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: DJ
@@ -12,5 +13,13 @@
 </head>
 <body>
 Strona34566
+<ul>
+    <c:forEach items="${threads}" var="thread" varStatus="threadLoop">
+        <li>
+            ${thread.name}
+        </li>
+    </c:forEach>
+</ul>
+
 </body>
 </html>
