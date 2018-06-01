@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import pl.forum.handler.FailureLoginHandler;
 import pl.forum.handler.SuccessLoginHandler;
 
 @Configuration
@@ -25,13 +26,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private final UserDetailsService userDetailsService;
     private final BCryptPasswordEncoder encoder;
     private final SuccessLoginHandler successLoginHandler;
+    private final FailureLoginHandler failureLoginHandler;
 
     @Autowired
     public SecurityConfiguration(UserDetailsService userDetailsService, BCryptPasswordEncoder encoder,
-                                 SuccessLoginHandler successLoginHandler) {
+                                 SuccessLoginHandler successLoginHandler, FailureLoginHandler failureLoginHandler) {
         this.userDetailsService = userDetailsService;
         this.encoder = encoder;
         this.successLoginHandler = successLoginHandler;
+        this.failureLoginHandler = failureLoginHandler;
     }
 
     @Override
@@ -63,6 +66,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                     .loginPage("/login")
                     .successHandler(successLoginHandler)
+                    .failureHandler(failureLoginHandler)
                     .permitAll()
                 .and().exceptionHandling().accessDeniedPage("/error")
                 .and().csrf().disable();

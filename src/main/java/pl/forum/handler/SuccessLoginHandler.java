@@ -15,7 +15,7 @@ public class SuccessLoginHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Override
     protected void handle(HttpServletRequest request, HttpServletResponse response,
                           Authentication authentication) throws IOException {
-        new DefaultRedirectStrategy().sendRedirect(request, response, "/registration");
+        new DefaultRedirectStrategy().sendRedirect(request, response, "/main");
     }
 
 }
